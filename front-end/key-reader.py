@@ -66,11 +66,12 @@ while status == 0:
         #       print 32
         #       print ('You entered', s)
         #       print 33
-                hash = encrypt_string(args.salt + "!" + str(s))
+                salt = 
+                hash = encrypt_string(encrypt_string(str(s) + "!" + args.salt) + "!" + str(salt))
         #       print 34
         #       print ("< " + hash)
                 print 35
-                response = requests.get(args.url + hash )
+                response = requests.get(args.url + "?hash=" + hash + "&salt=" + salt)
                 print 36
                 if response.text == "UNLOCK":
                         print "* UNLOCK THE DOOR!!!!!!"
