@@ -66,7 +66,7 @@ while status == 0:
         #       print 32
         #       print ('You entered', s)
         #       print 33
-                salt = 
+                salt = datetime.timestamp(now)
                 hash = encrypt_string(encrypt_string(str(s) + "!" + args.salt) + "!" + str(salt))
         #       print 34
         #       print ("< " + hash)
